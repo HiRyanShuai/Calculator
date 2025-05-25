@@ -3,37 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Calculator</title>
 </head>
 <body>
-    <div id="equation"></div>
-    <div id="screen">0</div>
-    <div id="keyboard">
-        <div class="control">
-            <button id="ac">AC</button>
-            <button id="neg">+/-</button>
-            <button id="back">&larr;</button>            
+    <div id="calculator">
+        <div class="show">
+            <div id="equation"></div>
+            <div id="screen">0</div>
         </div>
-        <div class="number">
-            <button id="7">7</button>
-            <button id="8">8</button>
-            <button id="9">9</button>
-            <button id="4">4</button>
-            <button id="5">5</button>
-            <button id="6">6</button>
-            <button id="1">1</button>
-            <button id="2">2</button>
-            <button id="3">3</button>
-            <div class="space"></div>
-            <button id="0">0</button>
-            <button id=".">.</button>
-        </div>
-        <div class="operator">
-            <button id="div">&divide;</button>
-            <button id="mul">&times;</button>
-            <button id="sub">-</button>
-            <button id="add">+</button>
-            <button id="equ">=</button>
+        <div id="keyboard">
+            <div class="con-num">
+                <div class="control">
+                    <button id="ac">AC</button>
+                    <button id="neg">&plusmn;</button>
+                    <button id="back">&larr;</button>
+                </div>
+                <div class="number">
+                    <button id="7">7</button>
+                    <button id="8">8</button>
+                    <button id="9">9</button>
+                    <button id="4">4</button>
+                    <button id="5">5</button>
+                    <button id="6">6</button>
+                    <button id="1">1</button>
+                    <button id="2">2</button>
+                    <button id="3">3</button>
+                    <div class="space"></div>
+                    <button id="0">0</button>
+                    <button id=".">.</button>
+                </div>
+            </div>
+            <div class="operator">
+                <button id="div">&divide;</button>
+                <button id="mul">&times;</button>
+                <button id="sub">-</button>
+                <button id="add">+</button>
+                <button id="equ">=</button>
+            </div>
         </div>
     </div>
     <script src="calculator.js"></script>

@@ -19,13 +19,13 @@ const ops = {
     div: '÷',
 }
 
-numbers.forEach(b=>b.addEventListener('click',(e)=>{
+numbers.forEach(b => b.addEventListener('click', (e)=>{
     back.disabled = false;
     neg.disabled = false;
-    if(operate!==''&&last==='op'){
+    if(last === 'op'){
         show = '0';
     }
-    if(last==='eq'){
+    else if(last === 'eq'){
         show = '0';
         operate = '';
     }
@@ -39,13 +39,17 @@ numbers.forEach(b=>b.addEventListener('click',(e)=>{
 }));
 
 neg.addEventListener('click', (e)=>{
-    if(show==='0') return;
-    if(show[0]==='-')
+    if(show === '0') return;
+    else if(show[0] === '-')
         show = show.slice(1);
     else
         show = '-' + show;
+    if(last === 'eq'){
+        operate = '';
+    }
+    equation.textContent = '';
     screen.textContent = show;
-})
+});
 
 ac.addEventListener('click', (e)=>{
     show = '0';
@@ -53,7 +57,6 @@ ac.addEventListener('click', (e)=>{
     operate = '';
     operandB = '';
     back.disabled = false;
-    neg.disabled = false;
     screen.textContent = show;
     equation.textContent = '';
     last = 'ac';
@@ -91,13 +94,12 @@ operators.forEach(b=>b.addEventListener('click', (e)=>{
                 }else{
                     operandA = show;
                 }
-                equation.textContent = `${operandA} ${ops[operate]} ${operandB} =`;
+                equation.textContent = `${operandA} ${ops[operate]} ${operandB}`;
                 show = operation(operate, Number.parseFloat(operandA), Number.parseFloat(operandB) );
             }
             screen.textContent = show;
             last = 'eq';
             back.disabled = true;
-            neg.disabled = true;
             return;
         default:
             operandA = show;
